@@ -4,7 +4,7 @@ import { NavBar, Footer, Loader, Services, Transaction, Welcome } from './compon
 const App = () => {
 
   return (
-    <div className='min-h-screen'>
+    <div className='overflow-hidden'>
       <div className="gradient-bg-welcome">
         <NavBar />
         <Welcome />

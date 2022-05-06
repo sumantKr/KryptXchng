@@ -11,7 +11,6 @@ const getEthereumContract = () => {
     return new ethers.Contract(contractAddress,contractABI,signer);
 }
 
-
 export const TransactionProvider = ({ children }) => {
     const [account, setAccount] = useState('');
     const [formData, setFormData] = useState({
@@ -21,7 +20,7 @@ export const TransactionProvider = ({ children }) => {
         message: ''
     })
     const [isLoading, setisLoading] = useState(false);
-
+    // const [currentTransactionData,setcurrentTransactionData]=useState('');
     useEffect(() => {
         walletConnected();
     }, [])
@@ -70,6 +69,7 @@ export const TransactionProvider = ({ children }) => {
             console.log(transactionHashId);
             console.log(`loading - ${transactionHashId.hash}`);
             setisLoading(false);
+
         } catch (error) {
             console.log(error);
             throw new Error('no ethereum object found')
